@@ -26,4 +26,4 @@ def info(df,name=''):
   print('filas con valores na o null --> ',len(rows_na))
   print('Representan el {:2.2f}%'.format(len(rows_na)*100/len(df)))
   print(rows_na)    
-  return {'numeric_columns':numeric_columns,'non_numeric_columns':non_numeric_columns,'datetime_columns':datetime_columns,'na_columns':na_columns,'na_rows_index':rows_na}
+  return {'numeric_columns':numeric_columns,'non_numeric_columns':non_numeric_columns,'datetime_columns':datetime_columns,'na_columns':na_columns.columns,'na_rows_index':rows_na}
