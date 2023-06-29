@@ -1,5 +1,6 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
+import numpy as np
 
 def correlation(df,target='',size_corr=(30,15)):
   plt.figure(figsize=size_corr)
