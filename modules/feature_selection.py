@@ -9,4 +9,5 @@ def feature_selection_prediction(X_train,y_train):
   f_i.sort(key = lambda x : x[1])
   plt.barh([x[0] for x in f_i],[x[1] for x in f_i])
   plt.show()
+  return rf.feature_importances_
 
