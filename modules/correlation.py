@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 
 def correlation(df,target='',size_corr=(30,15)):
   plt.figure(figsize=size_corr)
-
   corr = df.select_dtypes(include=np.number).corr()
   ax = sns.heatmap(
     corr,
