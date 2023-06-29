@@ -27,3 +27,9 @@ def info(df,name=''):
   print('Representan el {:2.2f}%'.format(len(rows_na)*100/len(df)))
   print(rows_na)    
   return {'numeric_columns':numeric_columns,'non_numeric_columns':non_numeric_columns,'datetime_columns':datetime_columns,'na_columns':na_columns.columns,'na_rows_index':rows_na}
+### eliminar columnas con valores NA
+### df.drop(columns=info['na_columns'],inplace=True)
+### obtener filas con valores NA en alguna columna
+## df.iloc[info['na_rows_index']]
+##  obtener el dataframe numérico
+### df[info['numeric_columns']]
