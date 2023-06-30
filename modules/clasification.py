@@ -21,3 +21,17 @@ def decision_tree(features,class_feature,testdata=None,max_depth=3,criterion="en
   predict = clf.predict(testdata)
   conf_mat_knn = confusion_matrix(class_feature, clf.predict(features))
   return {"predict":predict,"mat_conf":conf_mat_knn,"model":clf}
+
+
+#classification_knn = clasification.knn(features,class_feature,neighbors=10)
+#print(classification_knn['predict'])
+#print(classification_knn['mat_conf'])
+#classification_dt = clasification.decision_tree(features,class_feature)
+#print(classification_dt['predict'])
+#print(classification_dt['mat_conf'])
+#kf = KFold(n_splits=10)
+#scores = cross_val_score(classification_knn['model'], features,class_feature, cv=kf)
+#scores
+#kf = KFold(n_splits=10)
+#scores = cross_val_score(classification_dt['model'], features,class_feature, cv=kf)
+#scores.mean()
