@@ -27,7 +27,7 @@ def linear_regression(x_train, y_train,x_test=[], y_test=[]):
 def regularization_regression(x_train, y_train,alpha_start=0,alpha_end=0,alpha_step=0,algorithm='ridge',x_test=[], y_test=[],alpha=1.0):
     alpha_intial=alpha    
     algorithms={'ridge':Ridge,'lasso':Lasso,'elasticnet':ElasticNet}
-    for alpha_ in np.arange(alpha_start,alpha.alpha_end,alpha.alpha_step):
+    for alpha_ in np.arange(alpha_start,alpha_end,alpha_step):
       rr = algorithms[algorithm](alpha=alpha_)
       rr.fit(x_train, y_train)
       if rr.score(x_test, y_test)>alpha_intial:
