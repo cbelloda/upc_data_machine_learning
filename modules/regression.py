@@ -24,10 +24,10 @@ def linear_regression(x_train, y_train,x_test=[], y_test=[]):
     rmse = np.sqrt(metrics.mean_squared_error(y_test,y_pred))
     return {"model":lr,"predict":y_pred,"score":lr.score(x_test, y_test),"error":{"mae":mae,"mse":mse,"rmse":rmse}}
 
-def regularization_regression(x_train, y_train,alpha_set,algorithm='ridge',x_test=[], y_test=[],alpha=1.0):
+def regularization_regression(x_train, y_train,alpha_start=0,alpha_end=0,alpha_step=0,algorithm='ridge',x_test=[], y_test=[],alpha=1.0):
     alpha_intial=alpha    
     algorithms={'ridge':Ridge,'lasso':Lasso,'elasticnet':ElasticNet}
-    for alpha_ in alpha_set:
+    for alpha_ in np.arange(alpha_start,alpha.alpha_end,alpha.alpha_step):
       rr = algorithms[algorithm](alpha=alpha_)
       rr.fit(x_train, y_train)
       if rr.score(x_test, y_test)>alpha_intial:
