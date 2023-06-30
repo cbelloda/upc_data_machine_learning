@@ -1,3 +1,6 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
 def info(df,name=''):
   print('============================DIMENSIONES===================================')
   print('Dataframe {:s}  --->  '.format(name),df.shape)
@@ -33,3 +36,25 @@ def info(df,name=''):
 ## df.iloc[info['na_rows_index']]
 ##  obtener el dataframe numérico
 ### df[info['numeric_columns']]
+
+
+def imbalanced(y,class_label=''):
+  unique_labels, counts = np.unique(y, return_counts=True)
+  plt.bar(unique_labels, counts)
+  plt.xlabel('Clase'+class_label)
+  plt.ylabel('Número de muestras')
+  plt.title('Distribución de la clase en el dataset')
+  plt.show()
+
+  unique_labels, counts = np.unique(y, return_counts=True)
+  proportions = counts / len(y)  
+  print(proportions)
+
+  unique_labels, counts = np.unique(y, return_counts=True)
+  proportions = counts / len(y)
+
+  shannon_entropy = -np.sum(proportions * np.log(proportions))
+  print(f'Shannon entropy: {shannon_entropy:.2f}')
+
+
+
