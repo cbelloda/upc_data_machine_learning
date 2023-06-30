@@ -45,6 +45,7 @@ def imbalanced(y,class_label='',size_fig=(10,5)):
   plt.xlabel('Clase'+class_label)
   plt.ylabel('Número de muestras')
   plt.title('Distribución de la clase en el dataset')
+  plt.xticks(rotation = 45) 
   plt.show()
 
   unique_labels, counts = np.unique(y, return_counts=True)
