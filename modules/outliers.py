@@ -45,7 +45,7 @@ def out_multi_lof(df):
       label="Outlier scores",
   )
   plt.show()  
-  X['zscore']=radius
+  X['lofscore']=radius
   return X
 
 ##out_std = out.out_std(df['Salary'])
