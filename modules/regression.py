@@ -27,12 +27,14 @@ def linear_regression(x_train, y_train,x_test=[], y_test=[]):
 def regularization_regression(x_train, y_train,alpha_start=0,alpha_end=0,alpha_step=0,algorithm='ridge',x_test=[], y_test=[],alpha=1.0):
     alpha_intial=alpha    
     algorithms={'ridge':Ridge,'lasso':Lasso,'elasticnet':ElasticNet}
-    print(np.arange(alpha_start,alpha_end,alpha_step))
+    score_initial=0
     for alpha_ in np.arange(alpha_start,alpha_end,alpha_step):
+      print(alpha_)
       rr = algorithms[algorithm](alpha=alpha_)
       rr.fit(x_train, y_train)
-      if rr.score(x_test, y_test)>alpha_intial:
-        alpha_intial=rr.score(x_test, y_test)        
+      if rr.score(x_test, y_test)>score_initial:
+        score_initial=rr.score(x_test, y_test)        
+        alpha_intial=alpha_
     rr = Ridge(alpha=alpha_intial)
     rr.fit(x_train, y_train)
     if x_test == [] and y_test == []:
