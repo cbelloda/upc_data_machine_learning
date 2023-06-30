@@ -24,7 +24,7 @@ def linear_regression(x_train, y_train,x_test=[], y_test=[]):
     rmse = np.sqrt(metrics.mean_squared_error(y_test,y_pred))
     return {"model":lr,"predict":y_pred,"score":lr.score(x_test, y_test),"error":{"mae":mae,"mse":mse,"rmse":rmse}}
 
-def regularization_regression(x_train, y_train,algorithm='ridge',x_test=[], y_test=[],alpha=1.0,alpha_set=[]):
+def regularization_regression(x_train, y_train,alpha_set,algorithm='ridge',x_test=[], y_test=[],alpha=1.0):
     alpha_intial=alpha    
     algorithms={'ridge':Ridge,'lasso':Lasso,'elasticnet':ElasticNet}
     for alpha_ in alpha_set:
