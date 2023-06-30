@@ -38,14 +38,14 @@ def info(df,name=''):
 ### df[info['numeric_columns']]
 
 
-def imbalanced(y,class_label='',size_fig=(10,5)):
+def imbalanced(y,class_label='',size_fig=(10,5),rotate_label=45):
   unique_labels, counts = np.unique(y, return_counts=True)
   plt.figure(figsize=size_fig)
   plt.bar(unique_labels, counts)
   plt.xlabel('Clase'+class_label)
   plt.ylabel('Número de muestras')
   plt.title('Distribución de la clase en el dataset')
-  plt.xticks(rotation = 45) 
+  plt.xticks(rotation = rotate_label) 
   plt.show()
 
   unique_labels, counts = np.unique(y, return_counts=True)
