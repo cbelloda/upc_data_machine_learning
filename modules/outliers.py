@@ -49,4 +49,10 @@ def out_multi_lof(df):
   return X
 
 ##out_std = out.out_std(df['Salary'])
-##
+##out_iqr = out.out_iqr(df['Salary'])
+##z_score = out.out_zscore(df['Salary'])
+##multi_score = out.out_multi_lof(df[info['numeric_columns']])
+##df[out_iqr]
+##df['salary_zscore']=z_score
+##df[df['salary_zscore']>=3]
+##df[multi_score['lofscore']>0.5]
