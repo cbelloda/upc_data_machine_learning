@@ -10,7 +10,6 @@ def knn(features,class_feature,neighbors=3,testdata=None):
     testdata=features  
   predict = neigh.predict(testdata)
   conf_mat_knn = confusion_matrix(class_feature, neigh.predict(features))
-
   return {"predict":predict,"mat_conf":conf_mat_knn,"model":neigh}
 
 
@@ -21,5 +20,4 @@ def decision_tree(features,class_feature,testdata=None,max_depth=3,criterion="en
     testdata=features  
   predict = clf.predict(testdata)
   conf_mat_knn = confusion_matrix(class_feature, clf.predict(features))
-
   return {"predict":predict,"mat_conf":conf_mat_knn,"model":clf}
